@@ -41,24 +41,32 @@ public class Main {
             System.out.println("Could not read from files." + e);
             System.exit(1);
         }
+        // After saving the names, you will be able to get the data now whenever you run this.
+        Person p = universityDAO.get("adele");
+        System.out.println(p);
+        p.changeLastName("ADELE");
+        universityDAO.save(p);
+        System.out.println(p);
 
-        String[] name = "John Jacob Jingleheimer Schmidt".split(" ");
-        Person p1 = new Person(name, "schmidtj");
 
-        name = "Adele".split(" ");
-        Person p2 = new Person(name, "adele");
-
-        universityDAO.save(p1);
-        universityDAO.save(p2);
-
-        name = "Kiefer William Frederick Dempsey George Rufus Sutherland".split(" ");
-        Student s1 = new Student(name, "suther11", "1111111111");
-
-        name = "Rhianna".split(" ");
-        Student s2 = new Student(name, "rhianna", "222222222");
-
-        universityDAO.save(s1);
-        universityDAO.save(s2);
+        // for the code below, do a conditional check to add them if they were never added before
+//        String[] name = "John Jacob Jingleheimer Schmidt".split(" ");
+//        Person p1 = new Person(name, "schmidtj");
+//
+//        name = "Adele".split(" ");
+//        Person p2 = new Person(name, "adele");
+//
+//        universityDAO.save(p1);
+//        universityDAO.save(p2);
+//
+//        name = "Kiefer William Frederick Dempsey George Rufus Sutherland".split(" ");
+//        Student s1 = new Student(name, "suther11", "1111111111");
+//
+//        name = "Rhianna".split(" ");
+//        Student s2 = new Student(name, "rhianna", "222222222");
+//
+//        universityDAO.save(s1);
+//        universityDAO.save(s2);
     }
 
 
